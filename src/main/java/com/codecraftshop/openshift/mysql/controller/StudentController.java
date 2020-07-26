@@ -10,13 +10,13 @@ import com.codecraftshop.openshift.mysql.model.Student;
 import com.codecraftshop.openshift.mysql.repository.StudentRepository;
 
 @RestController
-@RequestMapping("/")
 public class StudentController {
+	
 	@Autowired
 	private StudentRepository studentRepository;
 	
-	@RequestMapping(value="/")
+	@RequestMapping(value="/students")
 	public List<Student> getStudents(){
-		return studentRepository.findAll();
+		return (List<Student>) studentRepository.findAll();
 	}
 }
